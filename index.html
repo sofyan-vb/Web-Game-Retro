@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Game Retro | By Sofyan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/favicon.jpg " type="image/png" sizes="52x52">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="background-music" loop>
+        <source src="sound/8bit-music-for-game-68698.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="arena-music" loop>
+        <source src="sound/mixkit-game-show-suspense-waiting-667.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="click-sound">
+        <source src="sound/mixkit-retro-arcade-casino-notification-211.wav" type="audio/mpeg">
+    </audio>
+
+    <div id="welcome-splash">
+        <div class="welcome-content">
+            <h1>太 ARCADE 太</h1>
+            <p>Bersiaplah untuk bernostalgia. Game akan segera dimuat...</p>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <header>
+        <h1>太 Arcade Game Retro 太</h1>
+
+     <div id="datetime-display">
+        <span id="date-display"></span>
+        <span id="time-display"></span>
+    </div>
+
+      <button id="settings-button" class="home-button" style="top: 25px; right: 25px; left: auto; z-index: 1000;"><i class="fa-solid fa-gear"></i></button>
+      <div class="theme-switcher">
+        <i class="icon-moon"></i>
+      <input type="checkbox" id="theme-toggle">
+      <label for="theme-toggle"></label>
+        <i class="icon-sun"></i> 
+</div>
+
+    </header>
+
+    <img src="https://i.pinimg.com/originals/7b/0b/cf/7b0bcf17d7f6120bd663e29678b9b7e6.gif" alt="Animated Retro Icon" class="side-gif" id="left-side-gif">
+    <img src="https://i.pinimg.com/originals/5b/65/87/5b6587b80f03b449901801a7dacd01cd.gif" alt="Animated Retro Icon Right" class="side-gif" id="right-side-gif">
+
+    <div id="main-cta">
+            <h2 class="cta-heading">TEKAN MASUK ARENA!</h2>
+            <button id="start-game-btn" class="main-cta-button">MASUK ARENA!</button>
+        </div>
+
+    <div class="game-list hidden-content" id="game-list-container">
+            <button id="back-to-cta-btn" class="home-button hidden"><i class="fa-solid fa-house"></i></button> 
+
+            <h2 class="cta-heading game-list-heading" style="margin-top: 0; margin-bottom: 30px;">PILIH GAME FAVORITMU</h2>
+        <div class="game-card">
+            <h2>Tebak Angka</h2>
+            <p>Tebak angka rahasia antara 1-100.</p>
+            <button class="play-button" data-game="tebak-angka">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Tic-Tac-Toe</h2>
+            <p>Game klasik untuk menguji strategi.</p>
+            <button class="play-button" data-game="tic-tac-toe">Mainkan!</button>
+        </div>
+        
+       <div class="game-card">
+            <h2>Batu Gunting Kertas</h2>
+            <p>Lawan keberuntungan melawan komputer.</p>
+            <button class="play-button" data-game="batu-gunting-kertas">Mainkan!</button>
+        </div>
+
+         <div class="game-card">
+            <h2>Ular Tangga</h2>
+            <p>Mainkan dadu dan hindari ular.</p>
+            <button class="play-button" data-game="ular-tangga">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Tangkap Benda</h2>
+            <p>Gerakkan pemukul dan tangkap benda jatuh. Jangan sampai lolos!</p>
+            <button class="play-button" data-game="tangkap-benda">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Cari Pasangan</h2>
+            <p>Uji daya ingatmu! Temukan semua pasangan kartu yang sama.</p>
+            <button class="play-button" data-game="cari-pasangan">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Tebak Kata</h2>
+            <p>Tebak huruf untuk mengungkap kata rahasia sebelum waktu habis!</p>
+            <button class="play-button" data-game="tebak-kata">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Game Ular</h2>
+            <p>Game klasik! Makan apel dan hindari menabrak dinding atau dirimu sendiri.</p>
+            <button class="play-button" data-game="snake-game">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Quiz Pengetahuan</h2>
+            <p>Uji wawasanmu dengan pertanyaan seru tentang sejarah, sains, dan game retro!</p>
+            <button class="play-button" data-game="quiz-umum">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Cari Harta Karun</h2>
+            <p>Temukan harta karun di antara ranjau di papan 5x5! Uji keberuntunganmu.</p>
+            <button class="play-button" data-game="cari-harta-karun">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Labirin</h2>
+            <p>Temukan jalan keluar! Gunakan tombol panah untuk bergerak.</p>
+            <button class="play-button" data-game="maze-game">Mainkan!</button>
+        </div>
+
+        <div class="game-card">
+            <h2>Arcade Tenis</h2>
+            <p>Pukul bola! Kalahkan komputer dalam pertandingan tenis klasik.</p>
+            <button class="play-button" data-game="arcade-tenis">Mainkan!</button>
+        </div>
+    </div>
+
+    <div id="game-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <div id="game-placeholder"></div>
+            </div>
+    </div>
+    
+    <div id="settings-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content setting-modal-content" style="width: 80%; max-width: 400px; padding: 40px 20px; justify-content: flex-start;">
+            <button class="close-button" id="close-settings-modal" style="top: 10px; right: 15px; font-size: 1.5em;">&times;</button>
+            <h2 class="cta-heading" style="margin-bottom: 25px; font-size: 1.5em;">PENGATURAN</h2>
+
+            <div id="setting-options" style="width: 100%; text-align: left; padding: 0 10px;">
+                
+                <p style="font-family: var(--font-primary); font-size: 0.8em; margin-bottom: 15px; color: var(--text-color); margin-top: 0; border-top: none; padding-top: 0;">Musik Latar (BGM)</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                    <span style="font-size: 1.0em; color: var(--button-color); font-family: var(--font-primary);">Status: <span id="music-status">Diputar</span></span>
+                    <button id="toggle-music-btn" class="game-button" style="padding: 8px 15px; font-size: 0.8em; margin: 0;">Jeda/Putar</button>
+                </div>
+                
+                <p style="font-family: var(--font-primary); font-size: 0.8em; margin-bottom: 10px; color: var(--text-color);">Atur Volume</p>
+                <input type="range" id="volume-slider" min="0" max="100" value="50" style="width: 100%; -webkit-appearance: none; height: 8px; background: var(--accent-color); border-radius: 5px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
