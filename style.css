@@ -156,16 +156,14 @@ header {
 }
 
 #settings-button {
-    /* Menggunakan properti yang sama dengan .home-button */
     position: fixed; 
     top: 25px; 
     right: 25px; 
-    left: auto; /* Memastikan tidak ada konflik dengan left: 25px dari home-button */
+    left: auto; 
     z-index: 1000; 
 }
 
 #settings-modal .modal-content {
-    /* Gaya spesifik untuk modal pengaturan (lebih kecil dan hanya vertikal) */
     width: 80%;
     max-width: 400px;
     height: auto;
@@ -173,8 +171,8 @@ header {
     padding: 40px 20px;
     justify-content: flex-start;
     overflow-y: hidden;
-    align-self: flex-start; /* Posisikan ke atas dalam flex container */
-    margin-top: 5vh;      /* Beri jarak dari atas layar */
+    align-self: flex-start; 
+    margin-top: 5vh;      
     margin-bottom: 5vh;
 }
 
@@ -325,7 +323,7 @@ body::before {
 
 .side-gif {
     position: fixed; 
-    width: 400px;  
+    width: 300px;  
     height: 300px; 
     z-index: 100; 
     filter: drop-shadow(0 0 8px var(--highlight-color));
@@ -436,7 +434,7 @@ header h1 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    display: none; /* Diubah oleh JS */
+    display: none; 
     justify-content: center;
     align-items: center;
     z-index: 99999;
@@ -494,21 +492,21 @@ header h1 {
 }
 
 .home-button {
-    position: fixed; /* KUNCI: Membuatnya tetap di layar */
-    top: 25px; /* Posisikan dekat pojok atas */
-    left: 25px; /* Posisikan dekat pojok kiri */
+    position: fixed; 
+    top: 25px;
+    left: 25px; 
     z-index: 1000; 
     
     background-color: var(--accent-color);
     color: var(--button-color); 
     border: 3px solid var(--button-color);
-    border-radius: 50%; /* Bentuk bulat */
-    width: 45px; /* Ukuran tombol ikon */
+    border-radius: 50%; 
+    width: 45px; 
     height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em; /* Ukuran ikon rumah */
+    font-size: 1.5em; 
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
@@ -1417,9 +1415,9 @@ header h1 {
 
 @media (max-width: 600px) {
 
-    /* --- FONT & HEADING UTAMA --- */
+    
     header h1 {
-        font-size: 1.5em; /* Kecilkan judul utama */
+        font-size: 1.5em; 
         padding: 0 10px;
     }
 
@@ -1431,24 +1429,22 @@ header h1 {
         font-size: 1.4em;
     }
 
-    /* --- SPLASH SCREEN --- */
     .welcome-content h1 {
         font-size: 2.5rem;
     }
     
-    /* --- SIDE GIFS (PENTING) --- */
+   
     .side-gif {
-        display: none !important; /* Sembunyikan GIF di layar kecil */
+        display: none !important; 
     }
 
-    /* --- BUTTONS & CTA --- */
+  
     .main-cta-button {
         padding: 10px 20px;
         font-size: 1em;
     }
 
     .home-button, #settings-button {
-        /* Ubah posisi tombol fixed agar tidak menutupi header */
         top: 15px;
         left: 15px; 
         right: auto;
@@ -1462,9 +1458,9 @@ header h1 {
         right: 15px;
     }
 
-    /* --- GAME LIST & CARDS --- */
+    
     .game-card {
-        width: 90%; /* Buat card mengisi lebar layar */
+        width: 90%; 
         max-width: 300px;
         margin-bottom: 20px;
     }
@@ -1474,9 +1470,8 @@ header h1 {
         margin: 20px 0;
     }
 
-    /* --- MODAL (OVERRIDE FULLSCREEN) --- */
+   
     .modal-content {
-        /* Kembalikan modal agar tidak selalu fullscreen di mobile */
         width: 95vw; 
         height: 95vh;
         max-width: 95vw; 
@@ -1490,18 +1485,16 @@ header h1 {
         font-size: 2em;
     }
 
-    /* --- GAME-SPECIFIC ARENAS (PENTING) --- */
-
-    /* Tangkap Benda (Catch Game) */
+  
     #game-arena {
-        width: 90vw; /* Lebar relatif */
+        width: 90vw; 
         max-width: 350px;
-        height: 400px; /* Tinggi tetap */
+        height: 400px; 
     }
     
-    /* Tic-Tac-Toe Board */
+   
     .tictactoe-board {
-        grid-template-columns: repeat(3, 80px); /* Kecilkan ukuran cell */
+        grid-template-columns: repeat(3, 80px); 
     }
 
     .cell {
@@ -1510,7 +1503,7 @@ header h1 {
         font-size: 3em;
     }
 
-    /* Snake Ladder Board */
+   
     .snake-ladder-game {
         width: 98%; 
         max-width: 98%;
@@ -1522,10 +1515,10 @@ header h1 {
     }
     
     .sl-cell {
-        font-size: 0.5em; /* Kecilkan nomor cell */
+        font-size: 0.5em; 
     }
 
-    /* Snake Game Board */
+   
     #snake-container {
         width: 90vw;
         height: 90vw;
@@ -1533,7 +1526,7 @@ header h1 {
         max-height: 350px;
     }
 
-    /* Cari Harta Karun Grid */
+ 
     #treasure-grid {
         grid-template-columns: repeat(5, 50px); 
         grid-template-rows: repeat(5, 50px);
@@ -1545,12 +1538,11 @@ header h1 {
         font-size: 1.2em;
     }
 
-    /* Labirin (Maze) Container */
     #maze-container {
         padding: 5px;
     }
     
-    /* Arcade Tenis Arena */
+  
     #tenis-arena {
         width: 90vw;
         max-width: 350px;
